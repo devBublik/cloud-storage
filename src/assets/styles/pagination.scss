@@ -1,0 +1,19 @@
+.pagination {
+    display: flex;
+    gap: 16px;
+    padding-top: 40px;
+
+    &__item {
+        padding: 8px;
+        border: 1px solid transparent;
+        color: $color-light-grey;
+        cursor: pointer;
+        &.active {
+            border: 1px solid $color-orange;
+        }
+        
+    }
+    .previous {
+        opacity: 0.5;
+    }
+}

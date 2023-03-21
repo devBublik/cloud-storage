@@ -1,0 +1,13 @@
+.sort {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    padding: 24px 0;
+
+    &__btn {
+        cursor: pointer;
+        &_active {
+            filter: brightness(0.1);
+        }
+    }
+}
