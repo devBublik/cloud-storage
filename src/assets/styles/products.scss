@@ -1,7 +1,32 @@
 .products {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    gap: 32px;
+    &_grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        gap: 32px;
+
+        @media (max-width: 1040px) {
+            grid-template-columns: 1fr 1fr;
+        }
+
+        @media (max-width: 420px) {
+            grid-template-columns: 1fr;
+        }
+    }
+    &_column {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 32px;
+
+        .product {
+            max-width: 100%;
+            flex-direction: row;
+            justify-content: space-between;
+        }
+        .product__rating {
+            justify-content: flex-start;
+        }
+    }
+    
 }
 
 .product {
@@ -16,6 +41,16 @@
     border: 1px solid $color-light-grey;
     border-radius: 8px;
     position: relative;
+
+    @media (max-width: 780px) {
+        max-width: 100%;
+        padding: 32px 16px 16px;
+    }
+
+    &__info {
+        width: 60%;
+        text-align: left;
+    }
 
     &__image {
         max-width: 232px;
@@ -46,12 +81,19 @@
         cursor: pointer;
 
         path {
-            transition: fill .3s;
+            transition: fill .3s, stroke .3s;
         }
 
         &:hover {
             path {
                 fill: #eb4034;
+                stroke: #eb4034;
+            }
+        }
+        &_active {
+            path {
+                fill: #eb4034;
+                stroke: #eb4034;
             }
         }
     }
@@ -68,7 +110,7 @@
     }
 
     &__buy {
-        background: orange;
+        background: $color-orange;
         height: 32px;
         line-height: 1.4;
         font-size: 20px;
@@ -77,6 +119,11 @@
         cursor: pointer;
         color: white;
         transition: font-weight .3s;
+
+        &_remove {
+            background-color: $color-light-grey;
+        }
+
         &:hover {
             font-weight: 700;
         }
@@ -86,6 +133,13 @@
         display: flex;
         justify-content: center;
         margin-bottom: 12px;
+    }
+
+    &__link {
+        transition: color .3s;
+        &:hover {
+            color: $color-orange;
+        }
     }
 }
 
@@ -110,5 +164,72 @@
             z-index: 2;
             background-image: url('../images/active-star.svg');
         }
+    }
+}
+
+.product-page {
+    display: flex;
+    padding-top: 60px;
+    gap: 32px;
+
+    &__gallery {
+        width: 50%;
+        max-height: 450px;
+    }
+
+    &__actions {
+        position: relative;
+        padding: 24px 0;
+
+        .product__like {
+            left: 104px;
+            top: 20px;
+            right: unset;
+            svg {
+                width: 18px;
+            }
+        }
+
+        .product__rating {
+            justify-content: flex-start;
+        }
+    }
+    &__price {
+        font-size: 32px;
+        font-weight: 700;
+        margin-bottom: 32px;
+        &_old {
+            font-size: 28px;
+            color: $color-light-grey;
+            text-decoration: line-through;
+        }
+    }
+    &__desc {
+        font-size: 20px;
+        margin-bottom: 16px;
+    }
+
+    &__stock {
+        text-align: left;
+        margin-bottom: 24px;
+    }
+    &__btn {
+        background-color: $color-orange;
+        padding: 16px 24px;
+        color: #ffffff;
+        font-size: 20px;
+        cursor: pointer;
+        border-radius: 8px;
+        transition: background-color .3s;
+        &:hover {
+            background-color: #eb4034;
+        }
+    }
+
+    @media (max-width: $mobile) {
+        display: block;
+    }
+    .carousel.carousel-slider{
+        max-height: 450px;
     }
 }

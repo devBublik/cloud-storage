@@ -27,6 +27,11 @@ body, #root {
   height: 100%;
 }
 
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
 .wrapper {
   display: flex;
   flex-direction: column;
@@ -55,6 +60,10 @@ ul {
     &__container {
         display: flex;
         gap: 24px;
+
+        @media (max-width: 780px) {
+            display: block;
+        }
     }
 }
 
@@ -62,4 +71,8 @@ ul {
     max-width: 25%;
     width: 100%;
     text-align: left;
+
+    @media (max-width: 780px) {
+        max-width: 100%;
+    }
 }

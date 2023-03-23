@@ -1,7 +1,7 @@
 export interface CategoryState {
     category: string[] | [],
     error: string,
-    activeCategory: number 
+    activeCategory: string 
 }
 
 export interface ProductsState {
@@ -22,6 +22,7 @@ export interface IProduct {
     category: string,
     thumbnail: string,
     images: string[],
+    count: number,
 }
 
 export interface ISettingsProducts {
@@ -31,7 +32,18 @@ export interface ISettingsProducts {
     stockFilterStart: 0,
     stockFilterEnd: 146,
     sort: string,
-    display: displayType
+    display: displayType,
+    category: string[] | [],
+    error: string,
+    activeCategory: string 
 }
 
 type displayType = 'grid' | 'column';
+
+export type ProductProps = {
+    product: IProduct
+}
+
+export type ProductsProps = {
+    products: IProduct[]
+}

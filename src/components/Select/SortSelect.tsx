@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import { useAppDispatch, useAppSelector } from '../../helpers/hooks';
 import { setSort } from '../../store/settings/SettingsSlice';
 
@@ -8,7 +8,8 @@ const SortSelect = () => {
     return (
         <select
             onChange={(e) => {
-                dispatch(setSort(e.target.value))}
+                dispatch(setSort(e.target.value))
+                }
             }
             value={sort}
         >

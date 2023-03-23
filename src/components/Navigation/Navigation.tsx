@@ -1,15 +1,13 @@
 import { useEffect, useState } from 'react';
 import { useAppDispatch, useAppSelector } from '../../helpers/hooks';
-import { toSetFirstLetter } from '../../helpers/utils';
-import { categoryRequest, changeCategory } from '../../store/categories/CategoriesSlice';
-import { categoryProductsRequest } from '../../store/categoryProducts/categoryProductsSlice';
+import { categoryRequest } from '../../store/settings/SettingsSlice';
 
 
 const Navigation = () => {
-    const { category, activeCategory } = useAppSelector(state => state.category)
+    const { category, activeCategory } = useAppSelector(state => state.settings)
     const dispatch = useAppDispatch()
     const [isVisible, setIsVisible] = useState(false);
-    const categoryIn = category[activeCategory] 
+    // const categoryIn = category[activeCategory] 
     useEffect(() => {
             dispatch(categoryRequest())
     }, [])
@@ -23,7 +21,7 @@ const Navigation = () => {
                         firstCategories.map((item, ind) => {
                         return (
                             <li key={ind} className="navigation__item">
-                                <button
+                                {/* <button
                                     className={activeCategory === ind ? 'navigation__btn active' : 'navigation__btn'}
                                     onClick = {() => {
                                         // dispatch(resetBrandFilter());
@@ -31,7 +29,7 @@ const Navigation = () => {
                                     }}
                                 > 
                                     {(toSetFirstLetter(item))} 
-                                </button>
+                                </button> */}
                             </li>
                         )
                         
@@ -39,7 +37,7 @@ const Navigation = () => {
                             category.map((item, ind) => {
                                 return (
                                     <li key={ind} className="navigation__item">
-                                        <button
+                                        {/* <button
                                             className={activeCategory === ind ? 'navigation__btn active' : 'navigation__btn'}
                                             onClick = {() => {
                                                 // dispatch(resetBrandFilter());
@@ -47,7 +45,7 @@ const Navigation = () => {
                                             }}
                                         > 
                                             {(toSetFirstLetter(item))} 
-                                        </button>
+                                        </button> */}
                                     </li>
                                 )
                             }

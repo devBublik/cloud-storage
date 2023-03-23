@@ -9,5 +9,10 @@
         &_active {
             filter: brightness(0.1);
         }
+        @media (max-width: 420px) {  
+            display: none;
+        }
     }
+
+    
 }

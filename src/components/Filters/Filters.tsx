@@ -14,7 +14,7 @@ const Filters = () => {
                 <h3>Filters</h3>
                 
             </div>
-            <form action="">
+            {/* <form action=""> */}
                 <ToggleFilter title='Price' children={<InputRange/>}/>
                 <ToggleFilter title='Brand' children={<Select/>}/>
                 <ToggleFilter title='Sort' children={<SortSelect/>}/>
@@ -25,7 +25,7 @@ const Filters = () => {
                 >
                     Reset filters
                 </button>
-            </form>
+            {/* </form> */}
         </div>
     );
 };

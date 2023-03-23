@@ -2,19 +2,12 @@
     padding-top: 58px;
     min-width: 240px;
     grid-area: filter;
-    &__form {
-        position: relative;
-    }
 
     &__title {
         font-weight: 700;
         font-size: 2.6rem;
         margin-bottom: 30px;
         pointer-events: none;
-  }
-
-  &__fields-list {
-    margin-bottom: 40px;
   }
 
   &__field {
@@ -63,23 +56,6 @@
   &__range-wrapper {
     display: flex;
     padding: 10px 0;
-  }
-
-  &__range-text {
-    font-size: 1rem;
-    font-weight: 500;
-
-    &_min {
-      place-self: center start;
-    }
-
-    &_current {
-      place-self: center center;
-    }
-
-    &_max {
-      place-self: center end;
-    }
   }
 
   &__range-label {
@@ -136,62 +112,29 @@
        background-color: white;
     }
   }
-
-  &__select-label {
-    position: relative;
-
-    &:after {
-      content: '';
-      position: absolute;
-      right: 20px;
-      top: 50%;
-      transform: translateY(calc(-50% - 4px)) rotate(45deg);
-      display: block;
-      width: 10px;
-      height: 10px;
-      border-width: 2px;
-      border-style: solid;
-      border-color: transparent;
-    }
-  }
-
-  &__btn {
-    display: block;
-    margin: 0 auto;
-    background-color: $color-text;
-    color: $color-text;
-    font-weight: 500;
-    font-size: 1.6rem;
-    padding: 8px 20px 10px;
-    border: none;
-    transition: background-color 0.36s ease-in-out;
-  }
-
-  &__apply {
-    margin-bottom: 10px;
-  }
-
-  &__reset {
-    position: absolute;
-    top: 5px;
-    right: 4px;
-    font-weight: 500;
-    font-size: 1.6rem;
-    color: $color-text;
-    background-color: transparent;
-    border: none;
-    transition: color 0.36s ease-in-out;
-
-    &:hover {
-      color: $color-text;
-    }
-  }
-
 }
 
 .filters {
+
+    &__header {
+        @media (max-width: $mobile) {
+            margin-bottom: 16px;
+        }
+    }
+
     &__left {
         grid-area: navigation;
+    }
+
+    &__reset {
+        font-size: 18px;
+        cursor: pointer;
+        color: $color-orange;
+        margin-top: 24px;
+
+        &:hover {
+            color: $color-text;
+        }
     }
    
 }

@@ -13,7 +13,7 @@ const initialState = {
 
 export const productsRequest = createAsyncThunk<ProductsState>('fetch/products',
     () => {
-        return fetch(`${BASE_API}${PRODUCT__URL}`)
+        return fetch(`${BASE_API}${PRODUCT__URL}?limit=100`)
                     .then(res => res.json())
                     .then((data) => data.products)
                     .catch((error) => ({error}))

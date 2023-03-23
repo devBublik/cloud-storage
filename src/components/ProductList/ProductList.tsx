@@ -8,34 +8,12 @@ type ProductsListType = {
 }
 
 const ProductList: FC<ProductsListType> = ({products}) => {
-    const {brandFilter, priceFilterStart, priceFilterEnd, sort} = useAppSelector(state => state.settings)
-    const filteredProducts = products.filter(item => 
-            item.price > priceFilterStart && item.price < priceFilterEnd && item.brand.includes(brandFilter)
-    )
- 
-    function sorting(sort: string) {
-        let sortingProducts = [...filteredProducts];
-        switch (sort) {
-        case 'priceLowToHigh':
-            sortingProducts = filteredProducts.sort((a, b) => a.price - b.price )
-            return sortingProducts
-        case 'priceHighToLow':
-            sortingProducts = filteredProducts.sort((a, b) => b.price - a.price )
-            return sortingProducts
-         case 'rating':
-            sortingProducts = filteredProducts.sort((a, b) => b.rating - a.rating )
-            return sortingProducts
-        default:
-            return sortingProducts
-        }
-    }   
-    const sortProducts = sorting(sort);
-    console.log(filteredProducts)
-    console.log(sortProducts)
+    const {display} = useAppSelector(state => state.settings);
+    
     return (
-        <ul className='products'>
-            {sortProducts.length > 0 ? (
-                sortProducts
+        <ul className={display === 'grid' ? 'products products_grid' : 'products products_column'}>
+            {products.length > 0 ? (
+                products
                     .map((product) => {
                         return <ProductItem key={product.id} product={product}/>
                     }

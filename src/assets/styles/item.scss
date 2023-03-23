@@ -1,0 +1,116 @@
+.item {
+    max-width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding: 16px 0;
+    align-items: center;
+
+    @media (max-width: 780px) {
+        display: grid;
+        gap: 8px;
+        grid-template-columns: 1fr 1.5fr 1fr;
+        grid-template-areas: 'image wrapper control'
+        'image info control';
+        align-self: flex-start;
+    }
+
+    @media (max-width: 420px) {
+        display: flex;
+        font-size: 12px;
+        
+    }
+
+    &__link {
+        width: 120px;
+        grid-area: image;
+
+        @media (max-width: 780px) {
+            width: 140px;
+            align-self: baseline;
+        }
+    }
+
+    &__info {
+        @media (max-width: 780px) {
+            grid-area: info;
+            text-align: left;
+        }
+    }
+
+    &__title-wrapper {
+        @media (max-width: 780px) {
+            grid-area: wrapper;
+            text-align: left;
+        }
+    }
+
+    &__image{
+        width: 100%;
+        max-height: 84px;
+    }
+    &__control {
+        display: flex;
+        align-items: center;
+        gap: 24px;
+        grid-area: control;
+        @media (max-width: 780px) {
+            align-self: flex-start;
+        }
+
+        @media (max-width: 420px) {
+            gap: 8px;
+        }
+    }
+
+    &__remove {
+        cursor: pointer;
+        transition: filter .3s;
+
+        svg {
+            width: 24px;
+        }
+
+        &:hover {
+            filter:opacity(0.5);
+        }
+    }
+}
+
+.cart {
+    &__container {
+        padding-top: 80px;
+    }
+}
+
+.count {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+
+    @media (max-width:420px) {
+        gap: 4px;
+    }
+
+    &__btn {
+        border: 1px solid $color-orange;
+        width: 32px;
+        height: 32px;
+        border-radius: 50%;
+        cursor: pointer;
+        transition: border-color .3s;
+        &:hover {
+            border-color: $color-text;
+        }
+        @media (max-width: 420px) {
+            width: 24px;
+            height: 24px;
+        }
+    }
+
+    &__digit {
+        font-size: 24px;
+        line-height: 0.8;
+        
+        
+    }
+}

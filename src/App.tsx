@@ -4,23 +4,32 @@ import Footer from './components/Footer/Footer';
 import Header from './components/Header/Header';
 import { Provider } from 'react-redux';
 import store from './store';
+import Modal from './components/Modal/Modal';
+import { useState } from 'react';
+import FavoriteList from './components/Like/FavoriteList';
+import { useAppSelector } from './helpers/hooks';
 
 
 function App() {
-  return (
-    <Provider store={store}>
-        <BrowserRouter>
-            <div className="wrapper">
-                <div className="content">
-                    <Header/>
-                    <AppRouter/>
+    const [isModal, setModal] = useState(false);
+    const {likeProducts} = useAppSelector(state => state.cart);
+    return (
+        
+            <BrowserRouter>
+                <div className="wrapper">
+                    <div className="content">
+                        <Header isModal={isModal} setModal={setModal}/>
+                        <AppRouter/>
+                    </div>
+                    <Footer />
+                    <Modal
+                        isVisible={isModal}
+                        title="Favorites"
+                        content={<FavoriteList products={likeProducts}/>}
+                        onClose={() => setModal(false)}
+                    />
                 </div>
-                <Footer />
-            </div>
-        </BrowserRouter>
-    </Provider>
-   
-    
+            </BrowserRouter>
   );
 }
 

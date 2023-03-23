@@ -6,4 +6,30 @@
         align-items: center;
         justify-content: space-between;
     }
+
+    &__items {
+        position: absolute;
+        background: $color-orange;
+        border-radius: 50%;
+        width: 24px;
+        height: 24px;
+        font-size: 14px;
+        font-weight: 600;
+        line-height: 1.6;
+        right: -8px;
+        top: -24px;
+    }
+
+    &__cart {
+        position: relative;
+    }
+
+    &__nav {
+        display: inline-flex;
+        gap: 24px;
+    }
+
+    &__like.product__like {
+        position: static;
+    }
 }
