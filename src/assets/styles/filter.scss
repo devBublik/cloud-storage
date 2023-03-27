@@ -29,6 +29,11 @@
     display: grid;
     grid-template-columns: 25% 1fr 25%;
     gap: 10px;
+
+    @media (max-width: 780px) {
+        display: flex;
+        justify-content: space-between;
+    }
   }
 
   &__input {

@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from 'react';
+import {useEffect, useState} from 'react';
 import ProductList from '../components/ProductList/ProductList';
 import { useAppDispatch, useAppSelector } from '../helpers/hooks';
 import { productsRequest } from '../store/products/ProductsSlice';
@@ -26,7 +26,7 @@ const MainPage = () => {
     const indexOfFirstPost = indexOfLastPost - goodsPerPage;
     
     const {brandFilter, priceFilterStart, priceFilterEnd, sort} = useAppSelector(state => state.settings)
-    const {category, activeCategory} = useAppSelector(state => state.settings)
+    const {activeCategory} = useAppSelector(state => state.settings)
 
     let categoryProducts: IProduct[] = []
     if (activeCategory.length > 0) {
@@ -63,10 +63,11 @@ const MainPage = () => {
     }   
     const sortProducts = sorting(sort);
     const finalProducts = categoryFilter(filteredProducts)
-    // const paginate = ({selected}) => {
-    //     setCurrentPage(selected + 1);
-    // };
     const currentGoods = finalProducts.slice(indexOfFirstPost, indexOfLastPost);
+
+    const paginate = ({selected} : {selected: number}) : void => {
+        setCurrentPage(selected + 1);
+    };
     return (
         <div className='main'>
             <div className="container main__container">
@@ -74,19 +75,19 @@ const MainPage = () => {
                     <Filters/>
                 </div>
                 <div className="main__content">
-                    <SortToolbar />
-                    <ProductList products={currentGoods}/>
-                    <ReactPaginate
-                        // onPageChange={paginate}
-                        pageCount={Math.ceil(products.length / goodsPerPage)}
-                        previousLabel={'<'}
-                        nextLabel={'>'}
-                        containerClassName={'pagination'}
-                        pageLinkClassName={'pagination__item'}
-                        previousLinkClassName={'pagination__item'}
-                        nextLinkClassName={'pagination__item'}
-                        activeLinkClassName={'active'}
-                />
+                        <SortToolbar />
+                        <ReactPaginate
+                            onPageChange={paginate}
+                            pageCount={Math.ceil(finalProducts.length / goodsPerPage)}
+                            previousLabel={'<'}
+                            nextLabel={'>'}
+                            containerClassName={'pagination'}
+                            pageLinkClassName={'pagination__item'}
+                            previousLinkClassName={'pagination__item'}
+                            nextLinkClassName={'pagination__item'}
+                            activeLinkClassName={'active'}
+                        />
+                        <ProductList products={currentGoods}/>
                 </div>
             </div>
         </div>

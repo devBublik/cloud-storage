@@ -45,7 +45,7 @@ const ProductItem: FC<ProductItemProps> = ({product}) => {
             >
                 {isInCart ? 'remove' : 'buy'}
             </button>
-            <div className="product__sale">{product.discountPercentage}</div>
+            <div className="product__sale">{product.discountPercentage} %</div>
         </div>
     );
 };

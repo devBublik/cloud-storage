@@ -18,7 +18,7 @@ const ProductPage: FC = () => {
         fetch(`${BASE_API}${PRODUCT__URL}/${id}`)
         .then(response => response.json())
         .then(res => setProduct(res))
-    }, []);
+    }, [id]);
     
     const {goodsInCart} = useAppSelector(state => state.cart)
     function defineId(id: number) {
@@ -28,6 +28,7 @@ const ProductPage: FC = () => {
     if (product) {
         (isInCart = defineId(product.id)) 
     }
+    console.log(id)
     return (
         <div className='container'>
             {product ? (

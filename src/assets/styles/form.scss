@@ -1,0 +1,43 @@
+.form {
+    &__field {
+        position: relative;
+    }
+
+    label {
+        display: block;
+    }
+
+    input {
+        width: 100%;
+        margin: 8px 0 16px; 
+        padding: 8px;
+        border: 1px solid $color-light-grey;
+        border-radius: 4px;
+    }
+
+    &__error {
+        font-size: 14px;
+        color: red;
+        position: absolute;
+        bottom: 0;
+    }
+    &__submit {
+        background-color: $color-orange;
+        color: white;
+        font-size: 18px;
+        padding: 8px 16px;
+        border-radius: 4px;
+        cursor: pointer;
+        transition: background .3s;
+        margin-top: 24px;
+
+        &:hover {
+            background-color: $color-hover;
+        }
+
+        &_disabled {
+            cursor: no-drop;
+            opacity: 0.5;
+        }
+    }
+}

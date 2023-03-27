@@ -33,5 +33,11 @@
 
     &__children {
         padding: 16px 0;
+
+        @media (max-width: 780px) {
+            select {
+                width: 100%;
+            }
+        }
     }
 }

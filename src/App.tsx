@@ -25,7 +25,7 @@ function App() {
                     <Modal
                         isVisible={isModal}
                         title="Favorites"
-                        content={<FavoriteList products={likeProducts}/>}
+                        content={<FavoriteList products={likeProducts} isModal={isModal} setModal={setModal}/>}
                         onClose={() => setModal(false)}
                     />
                 </div>

@@ -12,7 +12,7 @@ const Slider: FC<SliderProps> = ({images}) => {
             {images.map((image, ind) => {
                 return (
                     <div key={ind}>
-                        <img src={image}/>
+                        <img src={image} alt="image"/>
                     </div>
                 )
             })}

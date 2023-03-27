@@ -1,0 +1,17 @@
+.footer{
+     flex: 0 0 auto;
+    padding: 16px 0;
+    border-top: 1px solid $color-light-grey;
+    color: $color-light-grey;
+    &__wr{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        @media (max-width: 420px) {
+            flex-direction: column;
+            gap: 1rem;
+        }
+    }
+    
+}

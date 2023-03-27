@@ -32,6 +32,7 @@ const orderSlice = createSlice({
             const goodItem = state.goodsInCart.find((good) => good.id === action.payload.id)
             if (!goodItem) {
                 state.goodsInCart.push({...action.payload, count: 1})
+                
             } else {
                 const newGoods = state.goodsInCart.filter((good) => good.id !== action.payload.id)
                 state.goodsInCart = newGoods 
@@ -82,23 +83,31 @@ const orderSlice = createSlice({
         applyPromocode: (state) => {
             state.promoPrice = state.totalPrice*0.85;
         },
+        clearCart: (state) => {
+            state.goodsInCart =  lSorage;
+            state.totalPrice= totalPrice;
+            state.totalItems =lSorage.reduce((sum, curr) => sum + curr.count,0);
+            state.isActivePromo = JSON.parse(localStorage.getItem('promo') || 'false');
+            state.promoPrice = lSorage.reduce((sum, curr) => sum + curr.count * curr.price,0) * 0.85;
+            state.likeProducts =lProducts
+        }
     },
 })
-
-
 
 function changeStates(state: WritableDraft<CartState>) {
     state.totalItems = 0;
     state.totalPrice = 0;
     for (let i=0; i< state.goodsInCart.length; i++) {
-        state.totalItems += state.totalItems + state.goodsInCart[i].count
+        console.log(state.totalItems)
+        state.totalItems += state.goodsInCart[i].count
     }
 
     for (let i=0; i< state.goodsInCart.length; i++) {
-        state.totalPrice += state.totalPrice + state.goodsInCart[i].count * state.goodsInCart[i].price
+        state.totalPrice += state.goodsInCart[i].count * state.goodsInCart[i].price
     }
     state.promoPrice = state.totalPrice*0.85;
+
 }
 
-export const {addToCart, increaseCount, decreaseCount, deleteProduct, toggleActivePromo, applyPromocode, toLike} = orderSlice.actions
+export const {addToCart, increaseCount, decreaseCount, deleteProduct, toggleActivePromo, applyPromocode, toLike, clearCart} = orderSlice.actions
 export default orderSlice.reducer
