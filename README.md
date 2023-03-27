@@ -1,5 +1,7 @@
 # Online-store
 
+[Deploy - https://devbublik-online-store.netlify.app/](https://devbublik-online-store.netlify.app/)
+
 Stack: React, Redux Toolkit
 
 ## Available Scripts
