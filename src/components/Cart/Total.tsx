@@ -51,7 +51,7 @@ const Total: FC<OrderProps> = ({setModal, isModal}) => {
                     <button className={promo.length> 0 ? 'promo__btn' : 'hide' } onClick={handleSubmit}> apply</button>
                 <p className={isActivePromo ? 'hide' : 'promo__text'}>
                     <span>Promo codes for test: </span>
-                    <span>'RSS'</span>
+                    <span>RSS</span>
                 </p>
                 <div 
                     className={isActivePromo ? 'promo__codes' : 'hide'}

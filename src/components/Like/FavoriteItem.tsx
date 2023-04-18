@@ -1,6 +1,6 @@
-import {FC} from 'react';
-import { Link, NavLink, useNavigate } from 'react-router-dom';
-import { IProduct, ProductProps } from '../../helpers/types';
+import React, {FC} from 'react';
+import { NavLink } from 'react-router-dom';
+import { IProduct } from '../../helpers/types';
 import { getOldPrice } from '../../helpers/utils';
 
 type FavoriteListProps = {
@@ -10,11 +10,9 @@ type FavoriteListProps = {
 }
 
 const FavoriteItem: FC<FavoriteListProps> = ({product, setModal, isModal}) => {
-    let navigate = useNavigate();
     return (
         <div className='favorite'>
             <NavLink to={`/product/${product.id}`} className='favorite__link' onClick={() => {
-                    // navigate=({`/product/${product.id}`})
                     setModal(isModal===!isModal)
                     }}>
                 <div className="favorite__image">

@@ -1,21 +1,12 @@
 import 'react-app-polyfill/ie11';
 import { Formik, Field, Form } from 'formik';
-import {FC} from 'react';
+import React,{FC} from 'react';
 import * as Yup from 'yup';
 import { regexCardNumber, regexPhone, regexCardDate } from '../../helpers/regex';
 import { useNavigate } from "react-router-dom";
 import { useAppDispatch } from '../../helpers/hooks';
 import { clearCart } from '../../store/cart/cartSlice';
 
-
-interface Values {
-    firstName: string;
-    email: string;
-    address: string,
-    phone: string,
-    card: string,
-    valid: ''
-}
 type OrderProps = {
     setModal: React.Dispatch<React.SetStateAction<boolean>>,
     isModal: boolean,
@@ -51,7 +42,6 @@ const Order: FC<OrderProps> = ({setModal, setIsFinish}) => {
             }}
             validationSchema={SignupSchema}
                 onSubmit={values => {
-                console.log(values);
                 setIsFinish(true)
                 setModal(false)
                 localStorage.clear()

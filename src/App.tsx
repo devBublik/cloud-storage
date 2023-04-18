@@ -1,9 +1,8 @@
+import React from 'react';
 import { BrowserRouter} from 'react-router-dom';
 import AppRouter from './AppRouter';
 import Footer from './components/Footer/Footer';
 import Header from './components/Header/Header';
-import { Provider } from 'react-redux';
-import store from './store';
 import Modal from './components/Modal/Modal';
 import { useState } from 'react';
 import FavoriteList from './components/Like/FavoriteList';

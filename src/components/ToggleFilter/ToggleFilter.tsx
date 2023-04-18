@@ -1,4 +1,4 @@
-import {FC, useState} from 'react';
+import React, {FC, useState} from 'react';
 import arrow from '../../assets/images/arrow.svg';
 
 
@@ -9,6 +9,7 @@ type ToggleFilterProps = {
 }
 
 const ToggleFilter: FC<ToggleFilterProps> = ({title, children}) => {
+    // eslint-disable-next-line prefer-const
     let [isVisible, setIsVisible] = useState(false);
     return (
         <div className='toggle'>

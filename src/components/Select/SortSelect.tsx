@@ -1,3 +1,4 @@
+import React from 'react';
 import { useAppDispatch, useAppSelector } from '../../helpers/hooks';
 import { setSort } from '../../store/settings/SettingsSlice';
 

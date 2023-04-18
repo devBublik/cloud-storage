@@ -5,7 +5,6 @@ import { useAppDispatch, useAppSelector } from '../../helpers/hooks';
 import { IProduct } from '../../helpers/types';
 import { addToCart } from '../../store/cart/cartSlice';
 import Like from '../Like/Like';
-import cartLogo from '../../assets/images/incart.svg';
 
 type ProductItemProps = {
     product: IProduct

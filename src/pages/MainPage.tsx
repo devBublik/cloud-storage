@@ -1,4 +1,4 @@
-import {useEffect, useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import ProductList from '../components/ProductList/ProductList';
 import { useAppDispatch, useAppSelector } from '../helpers/hooks';
 import { productsRequest } from '../store/products/ProductsSlice';

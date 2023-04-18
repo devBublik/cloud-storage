@@ -1,4 +1,4 @@
-import { FC, useState } from 'react';
+import React, { FC, useState } from 'react';
 import CartItem from '../components/Cart/CartItem';
 import FinishModal from '../components/Cart/FinishModal';
 import Order from '../components/Cart/Order';

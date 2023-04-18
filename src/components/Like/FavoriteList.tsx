@@ -1,4 +1,4 @@
-import {FC} from 'react';
+import React, {FC} from 'react';
 import { IProduct, ProductsProps } from '../../helpers/types';
 import FavoriteItem from './FavoriteItem';
 

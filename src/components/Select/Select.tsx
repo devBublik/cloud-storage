@@ -1,3 +1,4 @@
+import React from 'react';
 import { useAppDispatch, useAppSelector } from '../../helpers/hooks';
 import { setBrandFilter } from '../../store/settings/SettingsSlice';
 

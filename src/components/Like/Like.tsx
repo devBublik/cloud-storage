@@ -1,4 +1,4 @@
-import {FC} from 'react';
+import React, {FC} from 'react';
 import { useAppDispatch, useAppSelector } from '../../helpers/hooks';
 import { IProduct } from '../../helpers/types';
 import { toLike } from '../../store/cart/cartSlice';

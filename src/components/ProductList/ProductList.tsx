@@ -1,4 +1,4 @@
-import {FC} from 'react';
+import React, {FC} from 'react';
 import { useAppSelector } from '../../helpers/hooks';
 import { IProduct } from '../../helpers/types';
 import ProductItem from './ProductItem';
@@ -20,7 +20,7 @@ const ProductList: FC<ProductsListType> = ({products}) => {
                 )
             ) : (
             <div className='products__no-goods'>
-                Sorry, we couldn't find products with these parameters.Try to set less restrictive filters or to change your search request.
+                Sorry, we could not find products with these parameters.Try to set less restrictive filters or to change your search request.
             </div>)}
         </ul>
     );

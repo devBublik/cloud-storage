@@ -1,4 +1,4 @@
-import {FC, useEffect, useState} from 'react';
+import React, {FC, useEffect, useState} from 'react';
 import { useParams } from 'react-router-dom';
 import Like from '../components/Like/Like';
 import Slider from '../components/Slider/Slider';

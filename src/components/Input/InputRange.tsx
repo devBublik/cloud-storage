@@ -1,3 +1,4 @@
+import React from 'react';
 import { useDispatch } from 'react-redux';
 import { max, min } from '../../helpers/const';
 import { useAppSelector } from '../../helpers/hooks';

@@ -1,3 +1,4 @@
+import React from 'react';
 import { useAppDispatch } from '../../helpers/hooks';
 import { resetFilters } from '../../store/settings/SettingsSlice';
 import InputRange from '../Input/InputRange';
@@ -15,10 +16,18 @@ const Filters = () => {
                 
             </div>
             {/* <form action=""> */}
-                <ToggleFilter title='Price' children={<InputRange/>}/>
-                <ToggleFilter title='Brand' children={<Select/>}/>
-                <ToggleFilter title='Sort' children={<SortSelect/>}/>
-                <ToggleFilter title='Categories' children={<CategorySelect/>}/>
+                <ToggleFilter title='Price'>
+                    <InputRange/>
+                </ToggleFilter>
+                <ToggleFilter title='Brand'>
+                    <Select/>
+                </ToggleFilter>
+                <ToggleFilter title='Sort'>
+                    <SortSelect/>
+                </ToggleFilter>
+                <ToggleFilter title='Categories'>
+                    <CategorySelect/>
+                </ToggleFilter>
                 <button
                     className='filters__reset'
                     onClick={() => dispatch(resetFilters())}

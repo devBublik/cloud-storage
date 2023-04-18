@@ -1,8 +1,7 @@
-import { FC } from 'react';
+import React, { FC } from 'react';
 import { NavLink } from 'react-router-dom';
 import logo from '../../assets/images/logo.svg';
 import cart from '../../assets/images/cart.svg';
-import likeLogo from '../../assets/images/heart.svg';
 import { CART_URL, HOME_URL } from '../../helpers/const';
 import { useAppSelector } from '../../helpers/hooks';
 

@@ -1,3 +1,4 @@
+import React from 'react';
 import {FC} from 'react';
 import { NavLink } from 'react-router-dom';
 import { PRODUCT_URL, starWidth } from '../../helpers/const';
